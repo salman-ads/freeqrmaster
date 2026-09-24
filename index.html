@@ -41,11 +41,15 @@
         .tab-content.active { display: block; }
         .legal-view { display: none; }
         .legal-view.active { display: block; }
+        /* Custom pure black dark mode overrides */
+        .dark body { background-color: #000000 !important; color: #f8fafc; }
+        .dark header, .dark footer, .dark .bg-white { background-color: #0a0a0a !important; border-color: #262626 !important; }
+        .dark .shadow-xl, .dark .shadow-sm { box-shadow: none !important; }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 h-full flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-50 dark:bg-black text-slate-800 dark:text-slate-100 h-full flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
 
-    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-50 shadow-sm">
+    <header class="bg-white dark:bg-[#0a0a0a] border-b border-slate-200 dark:border-neutral-800 sticky top-0 z-50 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="switchView('generator')">
@@ -53,31 +57,31 @@
                         <i class="fa-solid fa-qrcode text-xl"></i>
                     </div>
                     <div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">FreeQRMaster</span>
-                        <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">100% Free & Secure Client-Side</span>
+                        <span class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">FreeQRMaster</span>
+                        <span class="block text-xs text-slate-500 dark:text-neutral-400 font-medium">100% Free & Secure Client-Side</span>
                     </div>
                 </div>
                 <nav class="hidden md:flex items-center space-x-6 font-medium text-sm">
                     <button onclick="switchView('generator')" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles"></i> Generator</button>
-                    <button onclick="switchView('blog')" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open"></i> Guides & Blog</button>
-                    <button onclick="switchView('faq')" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question"></i> FAQ</button>
+                    <button onclick="switchView('blog')" class="text-slate-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open"></i> Guides & Blog</button>
+                    <button onclick="switchView('faq')" class="text-slate-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question"></i> FAQ</button>
                 </nav>
                 <div class="flex items-center space-x-3">
-                    <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition" title="Toggle Theme">
+                    <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-neutral-800 transition" title="Toggle Theme">
                         <i class="fa-solid fa-moon dark:hidden"></i>
                         <i class="fa-solid fa-sun hidden dark:inline"></i>
                     </button>
-                    <button onclick="mobileMenuToggle()" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                    <button onclick="mobileMenuToggle()" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-t border-slate-200 dark:border-slate-700 space-y-2 bg-white dark:bg-slate-800">
-            <button onclick="switchView('generator'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700"><i class="fa-solid fa-wand-magic-sparkles mr-2 text-indigo-500"></i> Generator</button>
-            <button onclick="switchView('blog'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Guides & Blog</button>
-            <button onclick="switchView('faq'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700"><i class="fa-solid fa-circle-question mr-2 text-indigo-500"></i> FAQ</button>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-t border-slate-200 dark:border-neutral-800 space-y-2 bg-white dark:bg-[#0a0a0a]">
+            <button onclick="switchView('generator'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-wand-magic-sparkles mr-2 text-indigo-500"></i> Generator</button>
+            <button onclick="switchView('blog'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Guides & Blog</button>
+            <button onclick="switchView('faq'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-circle-question mr-2 text-indigo-500"></i> FAQ</button>
         </div>
     </header>
 
@@ -87,69 +91,69 @@
         <div id="view-generator" class="space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Generate Professional QR Codes Instantly</h1>
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">Create customized QR codes for URLs, WiFi networks, vCards, locations, and more with zero expiration and full customization.</p>
+                <p class="text-slate-600 dark:text-neutral-400 text-sm sm:text-base">Create customized QR codes for URLs, WiFi networks, vCards, locations, and more with zero expiration and full customization.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <!-- Left Configuration Panel -->
-                <div class="lg:col-span-7 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 space-y-6">
+                <div class="lg:col-span-7 bg-white dark:bg-[#0a0a0a] rounded-2xl shadow-xl border border-slate-200 dark:border-neutral-800 p-6 sm:p-8 space-y-6">
                     <div>
-                        <label class="block text-sm font-semibold mb-3 text-slate-700 dark:text-slate-300">Select QR Code Type</label>
+                        <label class="block text-sm font-semibold mb-3 text-slate-700 dark:text-neutral-300">Select QR Code Type</label>
                         <div class="grid grid-cols-3 sm:grid-cols-6 gap-2" id="type-selector">
-                            <button onclick="setQRType('url')" data-type="url" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 transition font-medium text-xs gap-1.5 shadow-sm">
+                            <button onclick="setQRType('url')" data-type="url" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 transition font-medium text-xs gap-1.5 shadow-sm">
                                 <i class="fa-solid fa-link text-lg"></i> URL
                             </button>
-                            <button onclick="setQRType('text')" data-type="text" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 text-slate-600 dark:text-slate-400 transition font-medium text-xs gap-1.5">
+                            <button onclick="setQRType('text')" data-type="text" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5">
                                 <i class="fa-solid fa-align-left text-lg"></i> Text
                             </button>
-                            <button onclick="setQRType('wifi')" data-type="wifi" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 text-slate-600 dark:text-slate-400 transition font-medium text-xs gap-1.5">
+                            <button onclick="setQRType('wifi')" data-type="wifi" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5">
                                 <i class="fa-solid fa-wifi text-lg"></i> WiFi
                             </button>
-                            <button onclick="setQRType('vcard')" data-type="vcard" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 text-slate-600 dark:text-slate-400 transition font-medium text-xs gap-1.5">
+                            <button onclick="setQRType('vcard')" data-type="vcard" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5">
                                 <i class="fa-solid fa-address-card text-lg"></i> vCard
                             </button>
-                            <button onclick="setQRType('email')" data-type="email" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 text-slate-600 dark:text-slate-400 transition font-medium text-xs gap-1.5">
+                            <button onclick="setQRType('email')" data-type="email" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5">
                                 <i class="fa-solid fa-envelope text-lg"></i> Email
                             </button>
-                            <button onclick="setQRType('location')" data-type="location" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 text-slate-600 dark:text-slate-400 transition font-medium text-xs gap-1.5">
+                            <button onclick="setQRType('location')" data-type="location" class="type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5">
                                 <i class="fa-solid fa-location-dot text-lg"></i> Location
                             </button>
                         </div>
                     </div>
 
                     <!-- Dynamic Content Inputs -->
-                    <div id="input-container" class="space-y-4 pt-2 border-t border-slate-100 dark:border-slate-700">
+                    <div id="input-container" class="space-y-4 pt-2 border-t border-slate-100 dark:border-neutral-800">
                         <!-- URL Input -->
                         <div class="qr-input-pane" data-pane="url">
-                            <label class="block text-sm font-medium mb-1.5">Website URL</label>
+                            <label class="block text-sm font-medium mb-1.5 text-slate-700 dark:text-neutral-300">Website URL</label>
                             <div class="relative">
                                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-globe"></i></span>
-                                <input type="url" id="inp-url" oninput="generateQR()" placeholder="https://example.com" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-transparent focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm">
+                                <input type="url" id="inp-url" oninput="generateQR()" placeholder="https://example.com" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-neutral-800 bg-transparent focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm">
                             </div>
                         </div>
 
                         <!-- Text Input -->
                         <div class="qr-input-pane hidden" data-pane="text">
-                            <label class="block text-sm font-medium mb-1.5">Plain Text Content</label>
-                            <textarea id="inp-text" oninput="generateQR()" rows="3" placeholder="Enter any custom message or notes..." class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-transparent focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm"></textarea>
+                            <label class="block text-sm font-medium mb-1.5 text-slate-700 dark:text-neutral-300">Plain Text Content</label>
+                            <textarea id="inp-text" oninput="generateQR()" rows="3" placeholder="Enter any custom message or notes..." class="w-full p-3 rounded-xl border border-slate-300 dark:border-neutral-800 bg-transparent focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm"></textarea>
                         </div>
 
                         <!-- WiFi Input -->
                         <div class="qr-input-pane hidden space-y-3" data-pane="wifi">
                             <div>
-                                <label class="block text-xs font-medium mb-1">Network SSID (Name)</label>
-                                <input type="text" id="inp-wifi-ssid" oninput="generateQR()" placeholder="HomeWiFi_5G" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Network SSID (Name)</label>
+                                <input type="text" id="inp-wifi-ssid" oninput="generateQR()" placeholder="HomeWiFi_5G" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Password</label>
-                                <input type="text" id="inp-wifi-pass" oninput="generateQR()" placeholder="secretpassword" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Password</label>
+                                <input type="text" id="inp-wifi-pass" oninput="generateQR()" placeholder="secretpassword" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Encryption Type</label>
-                                <select id="inp-wifi-type" onchange="generateQR()" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                                    <option value="WPA">WPA/WPA2</option>
-                                    <option value="WEP">WEP</option>
-                                    <option value="nopass">No Password</option>
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Encryption Type</label>
+                                <select id="inp-wifi-type" onchange="generateQR()" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                                    <option value="WPA" class="dark:bg-black">WPA/WPA2</option>
+                                    <option value="WEP" class="dark:bg-black">WEP</option>
+                                    <option value="nopass" class="dark:bg-black">No Password</option>
                                 </select>
                             </div>
                         </div>
@@ -158,41 +162,41 @@
                         <div class="qr-input-pane hidden space-y-3" data-pane="vcard">
                             <div class="grid grid-cols-2 gap-2">
                                 <div>
-                                    <label class="block text-xs font-medium mb-1">First Name</label>
-                                    <input type="text" id="inp-vcard-first" oninput="generateQR()" placeholder="John" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                    <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">First Name</label>
+                                    <input type="text" id="inp-vcard-first" oninput="generateQR()" placeholder="John" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-medium mb-1">Last Name</label>
-                                    <input type="text" id="inp-vcard-last" oninput="generateQR()" placeholder="Doe" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                    <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Last Name</label>
+                                    <input type="text" id="inp-vcard-last" oninput="generateQR()" placeholder="Doe" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Phone Number</label>
-                                <input type="tel" id="inp-vcard-phone" oninput="generateQR()" placeholder="+1 555-0192" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Phone Number</label>
+                                <input type="tel" id="inp-vcard-phone" oninput="generateQR()" placeholder="+1 555-0192" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Email Address</label>
-                                <input type="email" id="inp-vcard-email" oninput="generateQR()" placeholder="john.doe@example.com" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Email Address</label>
+                                <input type="email" id="inp-vcard-email" oninput="generateQR()" placeholder="john.doe@example.com" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Organization / Company</label>
-                                <input type="text" id="inp-vcard-org" oninput="generateQR()" placeholder="Acme Corp" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Organization / Company</label>
+                                <input type="text" id="inp-vcard-org" oninput="generateQR()" placeholder="Acme Corp" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                             </div>
                         </div>
 
                         <!-- Email Input -->
                         <div class="qr-input-pane hidden space-y-3" data-pane="email">
                             <div>
-                                <label class="block text-xs font-medium mb-1">Recipient Email</label>
-                                <input type="email" id="inp-email-addr" oninput="generateQR()" placeholder="support@example.com" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Recipient Email</label>
+                                <input type="email" id="inp-email-addr" oninput="generateQR()" placeholder="support@example.com" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Subject Line</label>
-                                <input type="text" id="inp-email-sub" oninput="generateQR()" placeholder="Inquiry about services" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Subject Line</label>
+                                <input type="text" id="inp-email-sub" oninput="generateQR()" placeholder="Inquiry about services" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Message Body</label>
-                                <textarea id="inp-email-body" oninput="generateQR()" rows="2" placeholder="Hello, I would like to know..." class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm"></textarea>
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Message Body</label>
+                                <textarea id="inp-email-body" oninput="generateQR()" rows="2" placeholder="Hello, I would like to know..." class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm"></textarea>
                             </div>
                         </div>
 
@@ -200,48 +204,48 @@
                         <div class="qr-input-pane hidden space-y-3" data-pane="location">
                             <div class="grid grid-cols-2 gap-2">
                                 <div>
-                                    <label class="block text-xs font-medium mb-1">Latitude</label>
-                                    <input type="text" id="inp-loc-lat" oninput="generateQR()" placeholder="37.7749" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                    <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Latitude</label>
+                                    <input type="text" id="inp-loc-lat" oninput="generateQR()" placeholder="37.7749" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-medium mb-1">Longitude</label>
-                                    <input type="text" id="inp-loc-lng" oninput="generateQR()" placeholder="-122.4194" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
+                                    <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Longitude</label>
+                                    <input type="text" id="inp-loc-lng" oninput="generateQR()" placeholder="-122.4194" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
                                 </div>
                             </div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Enter geographic coordinates to generate a maps location QR code.</p>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400">Enter geographic coordinates to generate a maps location QR code.</p>
                         </div>
                     </div>
 
                     <!-- Customization Styling Accordion/Section -->
-                    <div class="border-t border-slate-100 dark:border-slate-700 pt-4 space-y-4">
-                        <h3 class="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-between cursor-pointer" onclick="toggleCustomization()">
+                    <div class="border-t border-slate-100 dark:border-neutral-800 pt-4 space-y-4">
+                        <h3 class="text-sm font-semibold text-slate-700 dark:text-neutral-300 flex items-center justify-between cursor-pointer" onclick="toggleCustomization()">
                             <span><i class="fa-solid fa-palette mr-1.5 text-indigo-500"></i> Advanced Customization</span>
                             <i class="fa-solid fa-chevron-down text-xs transition-transform" id="custom-chevron"></i>
                         </h3>
                         <div id="customization-panel" class="hidden space-y-4 pt-2">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-medium mb-1">Foreground Color</label>
+                                    <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Foreground Color</label>
                                     <div class="flex items-center space-x-2">
                                         <input type="color" id="inp-color-dark" value="#000000" onchange="generateQR()" class="w-10 h-10 rounded-lg cursor-pointer bg-transparent border-0">
-                                        <span class="text-xs font-mono text-slate-500" id="lbl-color-dark">#000000</span>
+                                        <span class="text-xs font-mono text-slate-500 dark:text-neutral-400" id="lbl-color-dark">#000000</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-medium mb-1">Background Color</label>
+                                    <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Background Color</label>
                                     <div class="flex items-center space-x-2">
                                         <input type="color" id="inp-color-light" value="#ffffff" onchange="generateQR()" class="w-10 h-10 rounded-lg cursor-pointer bg-transparent border-0">
-                                        <span class="text-xs font-mono text-slate-500" id="lbl-color-light">#ffffff</span>
+                                        <span class="text-xs font-mono text-slate-500 dark:text-neutral-400" id="lbl-color-light">#ffffff</span>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-medium mb-1">Error Correction Level</label>
-                                <select id="inp-error-level" onchange="generateQR()" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent text-sm">
-                                    <option value="L">Low (7%)</option>
-                                    <option value="M" selected>Medium (15%)</option>
-                                    <option value="Q">Quartile (25%)</option>
-                                    <option value="H">High (30% - Best if logo added)</option>
+                                <label class="block text-xs font-medium mb-1 text-slate-700 dark:text-neutral-300">Error Correction Level</label>
+                                <select id="inp-error-level" onchange="generateQR()" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-transparent text-sm">
+                                    <option value="L" class="dark:bg-black">Low (7%)</option>
+                                    <option value="M" selected class="dark:bg-black">Medium (15%)</option>
+                                    <option value="Q" class="dark:bg-black">Quartile (25%)</option>
+                                    <option value="H" class="dark:bg-black">High (30% - Best if logo added)</option>
                                 </select>
                             </div>
                         </div>
@@ -250,13 +254,13 @@
 
                 <!-- Right Preview & Download Panel -->
                 <div class="lg:col-span-5 sticky top-24 space-y-6">
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 flex flex-col items-center text-center space-y-6">
+                    <div class="bg-white dark:bg-[#0a0a0a] rounded-2xl shadow-xl border border-slate-200 dark:border-neutral-800 p-6 sm:p-8 flex flex-col items-center text-center space-y-6">
                         <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100">Live QR Preview</h2>
                         
                         <!-- QR Box Container -->
                         <div class="p-4 bg-white rounded-2xl shadow-inner border border-slate-100 flex items-center justify-center relative min-h-[240px] min-w-[240px]" id="qrcode-wrapper">
                             <div id="qrcode"></div>
-                            <div id="qr-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 bg-slate-50/90 dark:bg-slate-800/90 rounded-xl">
+                            <div id="qr-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 bg-slate-50/90 dark:bg-black/90 rounded-xl">
                                 <i class="fa-solid fa-qrcode text-4xl mb-2 animate-pulse text-indigo-500"></i>
                                 <span class="text-xs font-medium">Enter data to generate</span>
                             </div>
@@ -267,7 +271,7 @@
                             <button onclick="downloadQR('png')" class="flex items-center justify-center gap-2 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-lg shadow-indigo-500/25 transition text-sm">
                                 <i class="fa-solid fa-download"></i> PNG
                             </button>
-                            <button onclick="downloadQR('svg')" class="flex items-center justify-center gap-2 py-3 px-4 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium rounded-xl transition text-sm">
+                            <button onclick="downloadQR('svg')" class="flex items-center justify-center gap-2 py-3 px-4 bg-slate-100 dark:bg-neutral-900 hover:bg-slate-200 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-200 font-medium rounded-xl transition text-sm">
                                 <i class="fa-solid fa-file-code"></i> SVG
                             </button>
                         </div>
@@ -281,28 +285,28 @@
             <div class="max-w-4xl mx-auto space-y-4">
                 <div class="text-center space-y-2">
                     <h1 class="text-3xl font-extrabold tracking-tight">QR Code Guides & Best Practices</h1>
-                    <p class="text-slate-600 dark:text-slate-400">Discover expert advice, security tips, and creative marketing strategies for QR codes.</p>
+                    <p class="text-slate-600 dark:text-neutral-400">Discover expert advice, security tips, and creative marketing strategies for QR codes.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
-                        <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full">Marketing</span>
+                    <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-3">
+                        <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full">Marketing</span>
                         <h2 class="text-xl font-bold">How to Use QR Codes on Product Packaging</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm">Boost customer engagement by connecting physical goods directly to user manuals, warranty registrations, and tutorial videos.</p>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm">Boost customer engagement by connecting physical goods directly to user manuals, warranty registrations, and tutorial videos.</p>
                         <button onclick="openArticle('packaging')" class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:underline">Read Full Guide &rarr;</button>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
-                        <span class="px-3 py-1 bg-violet-50 dark:bg-violet-900/40 text-violet-600 dark:text-violet-400 text-xs font-semibold rounded-full">Security</span>
+                    <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-3">
+                        <span class="px-3 py-1 bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 text-xs font-semibold rounded-full">Security</span>
                         <h2 class="text-xl font-bold">Dynamic vs Static QR Codes: Which is Right For You?</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm">Understand the fundamental differences in scannability, redirection flexibility, analytics tracking, and permanence.</p>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm">Understand the fundamental differences in scannability, redirection flexibility, analytics tracking, and permanence.</p>
                         <button onclick="openArticle('dynamic')" class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:underline">Read Full Guide &rarr;</button>
                     </div>
                 </div>
 
                 <!-- Article Reader Modal / Section -->
-                <div id="article-reader" class="hidden bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md space-y-4">
+                <div id="article-reader" class="hidden bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-md space-y-4">
                     <button onclick="closeArticle()" class="text-sm text-indigo-600 font-semibold mb-2"><i class="fa-solid fa-arrow-left mr-1"></i> Back to Guides</button>
-                    <div id="article-body" class="space-y-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <div id="article-body" class="space-y-4 text-slate-700 dark:text-neutral-300 text-sm leading-relaxed">
                         <!-- Loaded dynamically -->
                     </div>
                 </div>
@@ -314,31 +318,31 @@
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="text-center space-y-2">
                     <h1 class="text-3xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
-                    <p class="text-slate-600 dark:text-slate-400">Got questions about FreeQRMaster? We have answers.</p>
+                    <p class="text-slate-600 dark:text-neutral-400">Got questions about FreeQRMaster? We have answers.</p>
                 </div>
 
                 <div class="space-y-4">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+                    <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-2">
                         <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Are these QR codes free for commercial use?</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Yes! All QR codes generated on FreeQRMaster are 100% free and static. They never expire and can be printed on commercial goods, flyers, business cards, or restaurant menus without any restrictions or watermarks.</p>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">Yes! All QR codes generated on FreeQRMaster are 100% free and static. They never expire and can be printed on commercial goods, flyers, business cards, or restaurant menus without any restrictions or watermarks.</p>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+                    <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-2">
                         <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Do my generated QR codes expire?</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">No. Because our generator encodes your data directly into static matrix codes client-side in your browser, there are no tracking servers or redirects involved. Your QR code will work permanently as long as the underlying target link or info remains valid.</p>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">No. Because our generator encodes your data directly into static matrix codes client-side in your browser, there are no tracking servers or redirects involved. Your QR code will work permanently as long as the underlying target link or info remains valid.</p>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+                    <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-2">
                         <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Is my data secure and private?</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Absolutely. Everything runs locally in your browser via JavaScript. We do not store, log, or track any input values, WiFi passwords, contact cards, or URLs on any remote servers.</p>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">Absolutely. Everything runs locally in your browser via JavaScript. We do not store, log, or track any input values, WiFi passwords, contact cards, or URLs on any remote servers.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- VIEW: PRIVACY POLICY -->
-        <div id="view-privacy" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div id="view-privacy" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
             <h1 class="text-3xl font-extrabold tracking-tight">Privacy Policy</h1>
             <p class="text-xs text-slate-500">Last updated: September 2026</p>
-            <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
                 <p>Welcome to FreeQRMaster. We respect your privacy and are committed to protecting any information you may interact with while using our free browser-based tools.</p>
                 <h2 class="text-lg font-bold pt-2">1. Information Processing & Client-Side Generation</h2>
                 <p>All QR codes created on FreeQRMaster are generated client-side directly within your web browser using JavaScript libraries. We do not transmit, log, or store the contents of your inputs—such as WiFi passwords, contact vCards, or private URLs—on any external servers.</p>
@@ -352,10 +356,10 @@
         </div>
 
         <!-- VIEW: TERMS OF SERVICE -->
-        <div id="view-terms" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div id="view-terms" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
             <h1 class="text-3xl font-extrabold tracking-tight">Terms of Service</h1>
             <p class="text-xs text-slate-500">Last updated: September 2026</p>
-            <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
                 <p>By accessing or using FreeQRMaster, you agree to be bound by these Terms of Service. Please read them carefully before using our QR code generation tools.</p>
                 <h2 class="text-lg font-bold pt-2">1. Acceptance of Terms</h2>
                 <p>By using FreeQRMaster, you signify your assent to these terms. If you do not agree with any part of these terms, please do not use our website.</p>
@@ -369,10 +373,10 @@
         </div>
 
         <!-- VIEW: DISCLAIMER -->
-        <div id="view-disclaimer" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div id="view-disclaimer" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
             <h1 class="text-3xl font-extrabold tracking-tight">Disclaimer</h1>
             <p class="text-xs text-slate-500">Last updated: September 2026</p>
-            <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
                 <p>The information and tools provided by FreeQRMaster are for general informational and utility purposes only.</p>
                 <h2 class="text-lg font-bold pt-2">1. QR Code Scannability & Testing</h2>
                 <p>While we ensure high compliance with standard matrix specifications, users are solely responsible for testing generated QR codes with multiple mobile devices and scanner apps prior to high-volume printing or commercial deployment.</p>
@@ -383,10 +387,10 @@
 
     </main>
 
-    <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 py-8 mt-16 text-sm">
+    <footer class="bg-white dark:bg-[#0a0a0a] border-t border-slate-200 dark:border-neutral-800 py-8 mt-16 text-sm transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-slate-500 dark:text-slate-400 text-center md:text-left">&copy; 2026 FreeQRMaster. All rights reserved. 100% Free Client-Side QR Generator.</p>
-            <div class="flex flex-wrap justify-center gap-6 text-slate-600 dark:text-slate-400 font-medium">
+            <p class="text-slate-500 dark:text-neutral-400 text-center md:text-left">&copy; 2026 FreeQRMaster. All rights reserved. 100% Free Client-Side QR Generator.</p>
+            <div class="flex flex-wrap justify-center gap-6 text-slate-600 dark:text-neutral-400 font-medium">
                 <button onclick="switchView('privacy')" class="hover:text-indigo-600 transition">Privacy Policy</button>
                 <button onclick="switchView('terms')" class="hover:text-indigo-600 transition">Terms of Service</button>
                 <button onclick="switchView('disclaimer')" class="hover:text-indigo-600 transition">Disclaimer</button>
@@ -422,9 +426,9 @@
             // Update button styles
             document.querySelectorAll('.type-btn').forEach(btn => {
                 if(btn.getAttribute('data-type') === type) {
-                    btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 transition font-medium text-xs gap-1.5 shadow-sm";
+                    btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 transition font-medium text-xs gap-1.5 shadow-sm";
                 } else {
-                    btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 text-slate-600 dark:text-slate-400 transition font-medium text-xs gap-1.5";
+                    btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5";
                 }
             });
 
