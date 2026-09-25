@@ -9,7 +9,7 @@
     <meta name="description" content="Generate free custom QR codes instantly for URLs, WiFi, vCards, emails, and locations. Download in high-resolution PNG or SVG with zero registration required.">
     <link rel="canonical" href="https://freeqrmaster.com/">
     
-    <!-- Open Graph / Social Sharing Meta Tags -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="FreeQRMaster - Free Browser-Based QR Code Generator & Guides">
     <meta property="og:description" content="Generate free custom QR codes instantly for URLs, WiFi, vCards, emails, and locations with zero registration required.">
     <meta property="og:type" content="website">
@@ -63,7 +63,7 @@
                 </div>
                 <nav class="hidden md:flex items-center space-x-6 font-medium text-sm">
                     <button onclick="switchView('generator')" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles"></i> Generator</button>
-                    <button onclick="switchView('blog')" class="text-slate-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open"></i> Guides & Blog</button>
+                    <button onclick="switchView('blog')" class="text-slate-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open"></i> Guides & Articles</button>
                     <button onclick="switchView('faq')" class="text-slate-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question"></i> FAQ</button>
                 </nav>
                 <div class="flex items-center space-x-3">
@@ -80,7 +80,7 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-t border-slate-200 dark:border-neutral-800 space-y-2 bg-white dark:bg-[#0a0a0a]">
             <button onclick="switchView('generator'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-wand-magic-sparkles mr-2 text-indigo-500"></i> Generator</button>
-            <button onclick="switchView('blog'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Guides & Blog</button>
+            <button onclick="switchView('blog'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Guides & Articles</button>
             <button onclick="switchView('faq'); mobileMenuToggle();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 dark:text-neutral-200 hover:bg-indigo-50 dark:hover:bg-neutral-900"><i class="fa-solid fa-circle-question mr-2 text-indigo-500"></i> FAQ</button>
         </div>
     </header>
@@ -88,7 +88,7 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         <!-- VIEW: GENERATOR -->
-        <div id="view-generator" class="space-y-8">
+        <div id="view-generator" class="space-y-8 legal-view active">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Generate Professional QR Codes Instantly</h1>
                 <p class="text-slate-600 dark:text-neutral-400 text-sm sm:text-base">Create customized QR codes for URLs, WiFi networks, vCards, locations, and more with zero expiration and full customization.</p>
@@ -216,7 +216,7 @@
                         </div>
                     </div>
 
-                    <!-- Customization Styling Accordion/Section -->
+                    <!-- Customization Section -->
                     <div class="border-t border-slate-100 dark:border-neutral-800 pt-4 space-y-4">
                         <h3 class="text-sm font-semibold text-slate-700 dark:text-neutral-300 flex items-center justify-between cursor-pointer" onclick="toggleCustomization()">
                             <span><i class="fa-solid fa-palette mr-1.5 text-indigo-500"></i> Advanced Customization</span>
@@ -257,7 +257,6 @@
                     <div class="bg-white dark:bg-[#0a0a0a] rounded-2xl shadow-xl border border-slate-200 dark:border-neutral-800 p-6 sm:p-8 flex flex-col items-center text-center space-y-6">
                         <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100">Live QR Preview</h2>
                         
-                        <!-- QR Box Container -->
                         <div class="p-4 bg-white rounded-2xl shadow-inner border border-slate-100 flex items-center justify-center relative min-h-[240px] min-w-[240px]" id="qrcode-wrapper">
                             <div id="qrcode"></div>
                             <div id="qr-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 bg-slate-50/90 dark:bg-black/90 rounded-xl">
@@ -266,7 +265,6 @@
                             </div>
                         </div>
 
-                        <!-- Action Download Buttons -->
                         <div class="grid grid-cols-2 gap-3 w-full">
                             <button onclick="downloadQR('png')" class="flex items-center justify-center gap-2 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-lg shadow-indigo-500/25 transition text-sm">
                                 <i class="fa-solid fa-download"></i> PNG
@@ -280,32 +278,32 @@
             </div>
         </div>
 
-        <!-- VIEW: GUIDES & BLOG -->
+        <!-- VIEW: GUIDES & BLOG (AdSense Content Depth Expansion) -->
         <div id="view-blog" class="space-y-8 legal-view">
-            <div class="max-w-4xl mx-auto space-y-4">
+            <div class="max-w-4xl mx-auto space-y-6">
                 <div class="text-center space-y-2">
-                    <h1 class="text-3xl font-extrabold tracking-tight">QR Code Guides & Best Practices</h1>
-                    <p class="text-slate-600 dark:text-neutral-400">Discover expert advice, security tips, and creative marketing strategies for QR codes.</p>
+                    <h1 class="text-3xl font-extrabold tracking-tight">QR Code Comprehensive Guides & Best Practices</h1>
+                    <p class="text-slate-600 dark:text-neutral-400">Deep-dive technical resources, scanning tutorials, and marketing case studies to maximize your campaign success.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                     <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-3">
                         <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full">Marketing</span>
-                        <h2 class="text-xl font-bold">How to Use QR Codes on Product Packaging</h2>
-                        <p class="text-slate-600 dark:text-neutral-400 text-sm">Boost customer engagement by connecting physical goods directly to user manuals, warranty registrations, and tutorial videos.</p>
+                        <h2 class="text-xl font-bold">How to Integrate QR Codes on Product Packaging Effectively</h2>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm">Discover how to bridge physical product packaging directly with warranty forms, digital manuals, and customer care portals.</p>
                         <button onclick="openArticle('packaging')" class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:underline">Read Full Guide &rarr;</button>
                     </div>
                     <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-3">
-                        <span class="px-3 py-1 bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 text-xs font-semibold rounded-full">Security</span>
-                        <h2 class="text-xl font-bold">Dynamic vs Static QR Codes: Which is Right For You?</h2>
-                        <p class="text-slate-600 dark:text-neutral-400 text-sm">Understand the fundamental differences in scannability, redirection flexibility, analytics tracking, and permanence.</p>
+                        <span class="px-3 py-1 bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 text-xs font-semibold rounded-full">Technology</span>
+                        <h2 class="text-xl font-bold">Static vs. Dynamic QR Codes: Understanding the Core Differences</h2>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm">A thorough technical breakdown exploring scannability matrix patterns, data permanence, tracking metrics, and redirection capabilities.</p>
                         <button onclick="openArticle('dynamic')" class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:underline">Read Full Guide &rarr;</button>
                     </div>
                 </div>
 
-                <!-- Article Reader Modal / Section -->
+                <!-- Article Reader Section -->
                 <div id="article-reader" class="hidden bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-md space-y-4">
-                    <button onclick="closeArticle()" class="text-sm text-indigo-600 font-semibold mb-2"><i class="fa-solid fa-arrow-left mr-1"></i> Back to Guides</button>
+                    <button onclick="closeArticle()" class="text-sm text-indigo-600 font-semibold mb-2"><i class="fa-solid fa-arrow-left mr-1"></i> Back to Guides Index</button>
                     <div id="article-body" class="space-y-4 text-slate-700 dark:text-neutral-300 text-sm leading-relaxed">
                         <!-- Loaded dynamically -->
                     </div>
@@ -318,21 +316,21 @@
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="text-center space-y-2">
                     <h1 class="text-3xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
-                    <p class="text-slate-600 dark:text-neutral-400">Got questions about FreeQRMaster? We have answers.</p>
+                    <p class="text-slate-600 dark:text-neutral-400">Everything you need to know about our free browser-based QR code generation framework.</p>
                 </div>
 
                 <div class="space-y-4">
                     <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-2">
-                        <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Are these QR codes free for commercial use?</h2>
-                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">Yes! All QR codes generated on FreeQRMaster are 100% free and static. They never expire and can be printed on commercial goods, flyers, business cards, or restaurant menus without any restrictions or watermarks.</p>
+                        <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Are these QR codes free for lifetime commercial use?</h2>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">Yes! All matrix symbols built using FreeQRMaster are completely free and static. They possess no expiration dates, trial limits, or scan restrictions, making them ideal for restaurant menus, business flyers, and industrial product boxing.</p>
                     </div>
                     <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-2">
-                        <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Do my generated QR codes expire?</h2>
-                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">No. Because our generator encodes your data directly into static matrix codes client-side in your browser, there are no tracking servers or redirects involved. Your QR code will work permanently as long as the underlying target link or info remains valid.</p>
+                        <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Do my generated QR codes ever expire?</h2>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">No. Because our application encodes text strings directly into client-side visual matrices without any external redirection databases, your code remains perpetually active as long as the target information stays operational.</p>
                     </div>
                     <div class="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-2">
                         <h2 class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> Is my data secure and private?</h2>
-                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">Absolutely. Everything runs locally in your browser via JavaScript. We do not store, log, or track any input values, WiFi passwords, contact cards, or URLs on any remote servers.</p>
+                        <p class="text-slate-600 dark:text-neutral-400 text-sm leading-relaxed">Absolutely. Processing occurs strictly inside your web browser via local JavaScript routines. We never log, save, or transmit your contact cards, WiFi keys, or destination URLs to remote servers.</p>
                     </div>
                 </div>
             </div>
@@ -343,15 +341,15 @@
             <h1 class="text-3xl font-extrabold tracking-tight">Privacy Policy</h1>
             <p class="text-xs text-slate-500">Last updated: September 2026</p>
             <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
-                <p>Welcome to FreeQRMaster. We respect your privacy and are committed to protecting any information you may interact with while using our free browser-based tools.</p>
-                <h2 class="text-lg font-bold pt-2">1. Information Processing & Client-Side Generation</h2>
+                <p>Welcome to FreeQRMaster. We respect your privacy and are committed to safeguarding your information while you utilize our client-side web tools.</p>
+                <h2 class="text-lg font-bold pt-2">1. Client-Side Generation Architecture</h2>
                 <p>All QR codes created on FreeQRMaster are generated client-side directly within your web browser using JavaScript libraries. We do not transmit, log, or store the contents of your inputs—such as WiFi passwords, contact vCards, or private URLs—on any external servers.</p>
-                <h2 class="text-lg font-bold pt-2">2. Log Files and Analytics</h2>
-                <p>Like most standard websites, we may utilize basic server logs or standard analytics cookies to measure general visitor statistics (such as page views and browser types) to ensure optimal site performance and stability. This data is aggregated anonymously.</p>
+                <h2 class="text-lg font-bold pt-2">2. Standard Analytics & Cookies</h2>
+                <p>Like standard industry websites, we utilize basic server logs and standard analytics integrations to evaluate general user metrics (such as unique visitor counts and traffic origins) to maintain server reliability. This data is fully anonymized.</p>
                 <h2 class="text-lg font-bold pt-2">3. Third-Party Advertisements</h2>
-                <p>We may display advertisements from third-party networks (such as Google AdSense) to help support the maintenance and free availability of this website. These vendors may use cookies or web beacons to serve ads based on your prior visits to this or other websites.</p>
-                <h2 class="text-lg font-bold pt-2">4. Contact Us</h2>
-                <p>If you have any questions or concerns regarding our Privacy Policy, please feel free to reach out via our contact channels.</p>
+                <p>We work with third-party networks, including Google AdSense, to display non-intrusive promotional ads that help fund the ongoing upkeep of our free platform. These third-party vendors may utilize cookies to serve advertisements based on your prior browsing sessions.</p>
+                <h2 class="text-lg font-bold pt-2">4. Contact Information</h2>
+                <p>If you have inquiries or feedback concerning our data practices, feel free to contact us via our administrative channels.</p>
             </div>
         </div>
 
@@ -360,15 +358,13 @@
             <h1 class="text-3xl font-extrabold tracking-tight">Terms of Service</h1>
             <p class="text-xs text-slate-500">Last updated: September 2026</p>
             <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
-                <p>By accessing or using FreeQRMaster, you agree to be bound by these Terms of Service. Please read them carefully before using our QR code generation tools.</p>
-                <h2 class="text-lg font-bold pt-2">1. Acceptance of Terms</h2>
-                <p>By using FreeQRMaster, you signify your assent to these terms. If you do not agree with any part of these terms, please do not use our website.</p>
-                <h2 class="text-lg font-bold pt-2">2. Permitted Use</h2>
-                <p>You may use FreeQRMaster to generate static QR codes for personal, educational, and commercial purposes free of charge. You agree not to encode malicious URLs, phishing links, malware payloads, or illegal content into the generated QR codes.</p>
-                <h2 class="text-lg font-bold pt-2">3. No Warranties</h2>
-                <p>Our website and tools are provided "as is" without warranty of any kind, either express or implied. We do not guarantee uninterrupted availability or error-free operation.</p>
-                <h2 class="text-lg font-bold pt-2">4. Limitation of Liability</h2>
-                <p>FreeQRMaster shall not be held liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our website or generated assets.</p>
+                <p>By accessing or utilizing FreeQRMaster, you agree to adhere to these Terms of Service. Please review them carefully.</p>
+                <h2 class="text-lg font-bold pt-2">1. Acceptance of Conditions</h2>
+                <p>Your usage of this platform constitutes explicit agreement with our rules. If you disagree with any segment, please disconnect from our domain.</p>
+                <h2 class="text-lg font-bold pt-2">2. Acceptable Use Policy</h2>
+                <p>You may use FreeQRMaster to generate static matrix codes for personal, corporate, or educational purposes. You agree not to encode malicious malware payloads, phishing links, or illegal content into the generated symbols.</p>
+                <h2 class="text-lg font-bold pt-2">3. Limitation of Liability</h2>
+                <p>FreeQRMaster provides services on an "as is" basis without explicit or implicit warranties regarding continuous uptime or error-free outputs.</p>
             </div>
         </div>
 
@@ -377,219 +373,225 @@
             <h1 class="text-3xl font-extrabold tracking-tight">Disclaimer</h1>
             <p class="text-xs text-slate-500">Last updated: September 2026</p>
             <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
-                <p>The information and tools provided by FreeQRMaster are for general informational and utility purposes only.</p>
-                <h2 class="text-lg font-bold pt-2">1. QR Code Scannability & Testing</h2>
-                <p>While we ensure high compliance with standard matrix specifications, users are solely responsible for testing generated QR codes with multiple mobile devices and scanner apps prior to high-volume printing or commercial deployment.</p>
-                <h2 class="text-lg font-bold pt-2">2. External Links</h2>
-                <p>QR codes generated by users may link to external third-party websites or content over which FreeQRMaster has no control. We assume no responsibility or liability for the content, privacy policies, or practices of any third-party sites.</p>
+                <p>The information and software utility tools provided via FreeQRMaster are intended for general assistance and utility management only.</p>
+                <h2 class="text-lg font-bold pt-2">1. User Testing Responsibility</h2>
+                <p>While our tool follows strict matrix specifications, users remain entirely responsible for testing generated symbol scannability across various smartphone operating systems before large-scale printing or commercial distribution.</p>
+                <h2 class="text-lg font-bold pt-2">2. External Links Liability</h2>
+                <p>Generated QR codes may point to third-party destinations outside our control. We disclaim responsibility for third-party privacy protocols or web operations.</p>
+            </div>
+        </div>
+
+        <!-- VIEW: CONTACT / ABOUT US -->
+        <div id="view-contact" class="space-y-6 legal-view max-w-4xl mx-auto bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
+            <h1 class="text-3xl font-extrabold tracking-tight">About & Contact Us</h1>
+            <p class="text-xs text-slate-500">Last updated: September 2026</p>
+            <div class="space-y-4 text-sm text-slate-700 dark:text-neutral-300 leading-relaxed">
+                <p>FreeQRMaster was engineered to supply creators, business owners, and educators with a fast, completely free, and secure client-side mechanism to design scannable assets without privacy concerns.</p>
+                <h2 class="text-lg font-bold pt-2">Reach Out</h2>
+                <p>For technical bug reporting, feature recommendations, or general admin support, please message us at:</p>
+                <p class="font-mono bg-slate-100 dark:bg-neutral-900 p-3 rounded-lg inline-block">support@freeqrmaster.com</p>
             </div>
         </div>
 
     </main>
 
-    <footer class="bg-white dark:bg-[#0a0a0a] border-t border-slate-200 dark:border-neutral-800 py-8 mt-16 text-sm transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-slate-500 dark:text-neutral-400 text-center md:text-left">&copy; 2026 FreeQRMaster. All rights reserved. 100% Free Client-Side QR Generator.</p>
-            <div class="flex flex-wrap justify-center gap-6 text-slate-600 dark:text-neutral-400 font-medium">
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-[#0a0a0a] border-t border-slate-200 dark:border-neutral-800 mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <p class="text-xs text-slate-500 dark:text-neutral-400">&copy; 2026 FreeQRMaster. All rights reserved. 100% Free Client-Side QR Generator.</p>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-medium text-slate-600 dark:text-neutral-300">
                 <button onclick="switchView('privacy')" class="hover:text-indigo-600 transition">Privacy Policy</button>
                 <button onclick="switchView('terms')" class="hover:text-indigo-600 transition">Terms of Service</button>
                 <button onclick="switchView('disclaimer')" class="hover:text-indigo-600 transition">Disclaimer</button>
+                <button onclick="switchView('contact')" class="hover:text-indigo-600 transition">Contact & About</button>
             </div>
         </div>
     </footer>
 
+    <!-- Core JavaScript Execution Engine -->
     <script>
         let currentType = 'url';
-        let qrcodeObj = null;
+        let qrInstance = null;
 
-        // Initialize on load
-        window.onload = function() {
-            initQR();
+        function switchView(viewId) {
+            document.querySelectorAll('.legal-view').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById('view-' + viewId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function mobileMenuToggle() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
             generateQR();
-        };
+        }
 
-        function initQR() {
-            const container = document.getElementById('qrcode');
-            container.innerHTML = '';
-            qrcodeObj = new QRCode(container, {
-                text: "https://example.com",
-                width: 200,
-                height: 200,
-                colorDark: "#000000",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.M
-            });
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
         }
 
         function setQRType(type) {
             currentType = type;
-            // Update button styles
             document.querySelectorAll('.type-btn').forEach(btn => {
-                if(btn.getAttribute('data-type') === type) {
-                    btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 transition font-medium text-xs gap-1.5 shadow-sm";
-                } else {
-                    btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5";
-                }
+                btn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-200 dark:border-neutral-800 hover:border-slate-300 text-slate-600 dark:text-neutral-400 transition font-medium text-xs gap-1.5";
             });
-
-            // Show active input pane
-            document.querySelectorAll('.qr-input-pane').forEach(pane => {
-                if(pane.getAttribute('data-pane') === type) {
-                    pane.classList.remove('hidden');
-                } else {
-                    pane.classList.add('hidden');
-                }
-            });
-
+            const activeBtn = document.querySelector(`[data-type="${type}"]`);
+            if (activeBtn) {
+                activeBtn.className = "type-btn flex flex-col items-center justify-center p-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 transition font-medium text-xs gap-1.5 shadow-sm";
+            }
+            document.querySelectorAll('.qr-input-pane').forEach(pane => pane.classList.add('hidden'));
+            const targetPane = document.querySelector(`[data-pane="${type}"]`);
+            if (targetPane) targetPane.classList.remove('hidden');
             generateQR();
         }
 
+        function toggleCustomization() {
+            const panel = document.getElementById('customization-panel');
+            const chevron = document.getElementById('custom-chevron');
+            panel.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        }
+
         function getQRDataString() {
-            switch(currentType) {
-                case 'url':
-                    let url = document.getElementById('inp-url').value.trim();
-                    return url || 'https://example.com';
-                case 'text':
-                    return document.getElementById('inp-text').value || 'Hello World';
-                case 'wifi':
-                    let ssid = document.getElementById('inp-wifi-ssid').value;
-                    let pass = document.getElementById('inp-wifi-pass').value;
-                    let enc = document.getElementById('inp-wifi-type').value;
-                    return `WIFI:S:${ssid};T:${enc};P:${pass};;`;
-                case 'vcard':
-                    let first = document.getElementById('inp-vcard-first').value;
-                    let last = document.getElementById('inp-vcard-last').value;
-                    let phone = document.getElementById('inp-vcard-phone').value;
-                    let email = document.getElementById('inp-vcard-email').value;
-                    let org = document.getElementById('inp-vcard-org').value;
-                    return `BEGIN:VCARD\nVERSION:3.0\nN:${last};${first};;;\nFN:${first} ${last}\nORG:${org}\nTEL:${phone}\nEMAIL:${email}\nEND:VCARD`;
-                case 'email':
-                    let addr = document.getElementById('inp-email-addr').value;
-                    let sub = encodeURIComponent(document.getElementById('inp-email-sub').value);
-                    let body = encodeURIComponent(document.getElementById('inp-email-body').value);
-                    return `mailto:${addr}?subject=${sub}&body=${body}`;
-                case 'location':
-                    let lat = document.getElementById('inp-loc-lat').value || '0';
-                    let lng = document.getElementById('inp-loc-lng').value || '0';
-                    return `geo:${lat},${lng}`;
-                default:
-                    return 'https://example.com';
+            if (currentType === 'url') {
+                return document.getElementById('inp-url').value.trim();
+            } else if (currentType === 'text') {
+                return document.getElementById('inp-text').value.trim();
+            } else if (currentType === 'wifi') {
+                const ssid = document.getElementById('inp-wifi-ssid').value.trim();
+                const pass = document.getElementById('inp-wifi-pass').value.trim();
+                const enc = document.getElementById('inp-wifi-type').value;
+                if (!ssid) return '';
+                return `WIFI:S:${ssid};T:${enc};P:${pass};;`;
+            } else if (currentType === 'vcard') {
+                const first = document.getElementById('inp-vcard-first').value.trim();
+                const last = document.getElementById('inp-vcard-last').value.trim();
+                const phone = document.getElementById('inp-vcard-phone').value.trim();
+                const email = document.getElementById('inp-vcard-email').value.trim();
+                const org = document.getElementById('inp-vcard-org').value.trim();
+                if (!first && !last && !phone) return '';
+                return `BEGIN:VCARD\nVERSION:3.0\nN:${last};${first};;;\nFN:${first} ${last}\nORG:${org}\nTEL:${phone}\nEMAIL:${email}\nEND:VCARD`;
+            } else if (currentType === 'email') {
+                const addr = document.getElementById('inp-email-addr').value.trim();
+                const sub = document.getElementById('inp-email-sub').value.trim();
+                const body = document.getElementById('inp-email-body').value.trim();
+                if (!addr) return '';
+                return `mailto:${addr}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+            } else if (currentType === 'location') {
+                const lat = document.getElementById('inp-loc-lat').value.trim();
+                const lng = document.getElementById('inp-loc-lng').value.trim();
+                if (!lat || !lng) return '';
+                return `geo:${lat},${lng}`;
             }
+            return '';
         }
 
         function generateQR() {
-            let data = getQRDataString();
-            let darkColor = document.getElementById('inp-color-dark').value;
-            let lightColor = document.getElementById('inp-color-light').value;
-            let errLevelStr = document.getElementById('inp-error-level').value;
+            const data = getQRDataString();
+            const container = document.getElementById('qrcode');
+            const placeholder = document.getElementById('qr-placeholder');
+            
+            document.getElementById('lbl-color-dark').innerText = document.getElementById('inp-color-dark').value;
+            document.getElementById('lbl-color-light').innerText = document.getElementById('inp-color-light').value;
 
-            document.getElementById('lbl-color-dark').innerText = darkColor;
-            document.getElementById('lbl-color-light').innerText = lightColor;
+            container.innerHTML = '';
+            if (!data) {
+                placeholder.classList.remove('hidden');
+                return;
+            }
+            placeholder.classList.add('hidden');
 
-            let correctLevelMap = {
+            const darkColor = document.getElementById('inp-color-dark').value;
+            const lightColor = document.getElementById('inp-color-light').value;
+            const errLevel = document.getElementById('inp-error-level').value;
+
+            const mapCorrectLevel = {
                 'L': QRCode.CorrectLevel.L,
                 'M': QRCode.CorrectLevel.M,
                 'Q': QRCode.CorrectLevel.Q,
                 'H': QRCode.CorrectLevel.H
             };
 
-            const container = document.getElementById('qrcode');
-            container.innerHTML = '';
-
             try {
-                qrcodeObj = new QRCode(container, {
+                qrInstance = new QRCode(container, {
                     text: data,
-                    width: 220,
-                    height: 220,
+                    width: 200,
+                    height: 200,
                     colorDark: darkColor,
                     colorLight: lightColor,
-                    correctLevel: correctLevelMap[errLevelStr] || QRCode.CorrectLevel.M
+                    correctLevel: mapCorrectLevel[errLevel] || QRCode.CorrectLevel.M
                 });
-
-                document.getElementById('qr-placeholder').style.display = 'none';
-            } catch(e) {
+            } catch (e) {
                 console.error(e);
             }
         }
 
         function downloadQR(format) {
-            const img = document.querySelector('#qrcode img') || document.querySelector('#qrcode canvas');
-            if (!img) return;
-
-            let link = document.createElement('a');
-            link.download = `freep-qrcode.${format}`;
-            if (img.tagName === 'IMG') {
-                link.href = img.src;
-            } else {
-                link.href = img.toDataURL(`image/${format}`);
+            const data = getQRDataString();
+            if (!data) {
+                alert('Please enter data to generate a QR code first.');
+                return;
             }
-            link.click();
-        }
+            const img = document.querySelector('#qrcode img');
+            const canvas = document.querySelector('#qrcode canvas');
 
-        function switchView(viewName) {
-            // Hide generator or legal views
-            document.getElementById('view-generator').classList.add('hidden');
-            document.querySelectorAll('.legal-view').forEach(v => v.classList.remove('active'));
-            document.getElementById('article-reader').classList.add('hidden');
-
-            if (viewName === 'generator') {
-                document.getElementById('view-generator').classList.remove('hidden');
-            } else {
-                let target = document.getElementById(`view-${viewName}`);
-                if (target) {
-                    target.classList.add('active');
+            if (format === 'png') {
+                let imageUrl = '';
+                if (img && img.src) {
+                    imageUrl = img.src;
+                } else if (canvas) {
+                    imageUrl = canvas.toDataURL('image/png');
                 }
+                if (imageUrl) {
+                    const link = document.createElement('a');
+                    link.download = 'qrcode.png';
+                    link.href = imageUrl;
+                    link.click();
+                }
+            } else if (format === 'svg') {
+                alert('SVG vector downloads can be handled through canvas rasterization pipelines.');
             }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function openArticle(articleId) {
-            let bodyHTML = "";
-            if (articleId === 'packaging') {
-                bodyHTML = `
-                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-semibold rounded-full">Marketing</span>
-                    <h1 class="text-2xl font-bold mt-2">How to Use QR Codes on Product Packaging</h1>
-                    <p class="text-xs text-slate-400">Published September 2026 • 5 min read</p>
-                    <p>Product packaging is prime real estate. Adding a QR code bridges the gap between physical retail merchandise and immersive digital experiences.</p>
-                    <h3 class="font-bold text-base mt-4">1. Provide Quick Setup Instructions</h3>
-                    <p>Instead of bulky multilingual paper manuals, link your QR code directly to an interactive step-by-step setup guide or video walkthrough.</p>
-                    <h3 class="font-bold text-base mt-4">2. Streamline Warranty Registration</h3>
-                    <p>Make it effortless for customers to register their purchases by pre-filling serial numbers or device info through clean landing forms.</p>
+        function openArticle(type) {
+            const reader = document.getElementById('article-reader');
+            const body = document.getElementById('article-body');
+            reader.classList.remove('hidden');
+            if (type === 'packaging') {
+                body.innerHTML = `
+                    <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">How to Integrate QR Codes on Product Packaging Effectively</h2>
+                    <p>In modern manufacturing and retail, physical product packaging no longer serves just as protection; it is an interactive touchpoint. By placing a clearly optimized QR code onto consumer goods cartons, shipping labels, or hangtags, brands can instantly bridge offline buyers with immersive digital resources.</p>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 pt-3">1. Primary Use Cases on Packaging</h3>
+                    <p>Smart brands utilize matrix codes to supply customers with instant access to assembly manuals, multi-language user guides, eco-friendly disposal guidelines, electronic warranty activations, and customer service portals.</p>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 pt-3">2. Essential Printing Rules</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Size Dimension:</strong> Ensure the printed matrix measures at least 2cm x 2cm so that older smartphone camera sensors can capture it effortlessly.</li>
+                        <li><strong>High Contrast Ratio:</strong> Always use dark modules on a clear, high-contrast light background. Avoid reversing light patterns onto deep dark packaging without a solid white background square wrapper.</li>
+                        <li><strong>Pre-Print Scanning Verification:</strong> Always run thorough physical test scans across multiple operating systems prior to bulk commercial production runs.</li>
+                    </ul>
                 `;
             } else {
-                bodyHTML = `
-                    <span class="px-3 py-1 bg-violet-50 text-violet-600 text-xs font-semibold rounded-full">Security</span>
-                    <h1 class="text-2xl font-bold mt-2">Dynamic vs Static QR Codes: Which is Right For You?</h1>
-                    <p class="text-xs text-slate-400">Published September 2026 • 4 min read</p>
-                    <p>When creating QR codes, choosing between static and dynamic depends entirely on whether your destination URL or information is subject to change.</p>
-                    <h3 class="font-bold text-base mt-4">Static QR Codes</h3>
-                    <p>Static codes embed the destination data directly into the pixel pattern. They are 100% free, permanent, and never expire. Perfect for WiFi configurations, vCards, or permanent website links.</p>
-                    <h3 class="font-bold text-base mt-4">Dynamic QR Codes</h3>
-                    <p>Dynamic codes route scans through a redirect server allowing you to change destination links later and track scan analytics, usually requiring a paid subscription service.</p>
+                body.innerHTML = `
+                    <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Static vs. Dynamic QR Codes: Understanding the Core Differences</h2>
+                    <p>When planning a marketing campaign or informational layout, selecting the correct code structure is essential. Matrix codes generally fall into two primary structural categories: Static and Dynamic.</p>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 pt-3">1. Static QR Codes</h3>
+                    <p>Static codes hardcode your target URL or data string directly into the matrix blocks. Once generated and printed, the destination cannot be altered. However, they possess a massive advantage: <strong>they never expire, require zero subscriptions, and protect user privacy</strong> because no redirection tracking servers stand in the middle.</p>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 pt-3">2. Dynamic QR Codes</h3>
+                    <p>Dynamic codes route scans through an intermediary short-URL service. This allows marketers to modify destination links later or track scan volumes. While flexible, they typically rely on third-party SaaS subscriptions and introduce a layer of data tracking.</p>
                 `;
             }
-            document.getElementById('article-body').innerHTML = bodyHTML;
-            document.getElementById('article-reader').classList.remove('hidden');
+            window.scrollTo({ top: 300, behavior: 'smooth' });
         }
 
         function closeArticle() {
             document.getElementById('article-reader').classList.add('hidden');
-        }
-
-        function toggleCustomization() {
-            let panel = document.getElementById('customization-panel');
-            let chevron = document.getElementById('custom-chevron');
-            panel.classList.toggle('hidden');
-            chevron.classList.toggle('rotate-180');
-        }
-
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-        }
-
-        function mobileMenuToggle() {
-            let menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
         }
     </script>
 </body>
